@@ -34,4 +34,13 @@ my API key
 1lQHsuUDCMrbyRsZgOW4Hpi6ug0A6kCT
 and/or Youtube
 ## Rough breakdown of tasks
-lots and lots.....
+### very very rough
+make a sketch
+make a bootstrap layout
+set up all our variables
+research jquery UI to implement in the decade dropdown
+obtain API keys for all 3 APIs
+link in and get TMDB functioning
+link in and get Rotten Tomatoes functioning
+link in and get Giphy functioning
+
