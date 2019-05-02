@@ -18,7 +18,7 @@ rotten tomatoes information
 then we will display either a preview or a gif depending on how difficult the implementation is of each. 
 ## Sketch of final product
 heading "Mom's Movies"
-genre, year and rating forum to search for desiired criteria
+genre, year and rating forum to search for desired criteria
 next to that wll be the 5 movie titles that their search returns
 underneath that will display each title and informatioin from TMDB
 **sketch is on paper!!**
@@ -26,6 +26,12 @@ underneath that will display each title and informatioin from TMDB
 TMDB
 https://api.themoviedb.org/3/movie/550?api_key=605fb8e2ccd3028b0de23babc676329e
 Rotten Tomatoes
-Giphy and/or Youtube
+Giphy
+//javascript, jQuery
+var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5");
+xhr.done(function(data) { console.log("success got data", data); });
+my API key
+1lQHsuUDCMrbyRsZgOW4Hpi6ug0A6kCT
+and/or Youtube
 ## Rough breakdown of tasks
 lots and lots.....
