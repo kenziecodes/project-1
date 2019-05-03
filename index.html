@@ -13,7 +13,7 @@
     <title>Mom's Movies</title>
 </head>
 
-<body>
+<body> 
     <!--Title bar-->
     <container>
         <h1>Mom's Movies</h1>
@@ -69,6 +69,34 @@
         
     </div>
     <!-- Optional JavaScript -->
+    <script>
+    var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.themoviedb.org/3/search/multi?include_adult=false&page=1&language=en-US&api_key=605fb8e2ccd3028b0de23babc676329e",
+  "method": "GET",
+  "headers": {},
+  "data": "{}"
+}
+$.ajax(settings).done(function (response) {
+  console.log(response);
+
+  var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.themoviedb.org/3/search/keyword?page=1&api_key=605fb8e2ccd3028b0de23babc676329e",
+  "method": "GET",
+  "headers": {},
+  "data": "{}"
+}
+$.ajax(settings).done(function (response) {
+  console.log(response);
+    
+  //what are the best dramas
+  URL: /discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=10
+
+  </script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
