@@ -7,16 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- google fonts load in -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro" rel="stylesheet">
-    <!-- style.css -->
-    <link rel="stylesheet" href="styles.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- linking in the jquery UI -->
-    <link rel="stylesheet" href="jquery-ui.min.css">
+    <!-- <link rel="stylesheet" href="jquery-ui.min.css">
     <script src="external/jquery/jquery.js"></script>
-    <script src="jquery-ui.min.js"></script>
+    <script src="jquery-ui.min.js"></script> -->
+    <!-- style.css -->
+
+    <!-- under this iis tuckers -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <!--<link rel="stylesheet" href="/resources/demos/style.css" /> -->
+    <link rel="stylesheet" href="style.css">
+
+
 
     <title>Mom's Movies</title>
 </head>
@@ -28,14 +34,63 @@
         <div class="row" class="col-12" id="header">
             <h1>Mom's movies</h1>
         </div>
-        <!-- Row for form and titie list-->
-        <!-- Row for the form/results cards -->
+        <!-- Row for form and titie list & form/results cards -->
         <div class="row" id="mainRow">
-            <div class="col-6" id="title"> Make your selections here!!</div>
+            <div class="col-6" id="title"> Make your selections here!!
+                <div class="select-genre" style="width:200px;">
+                    <!-- tucker helped with this -->
+                    <div class="demo">
+                        <form action="#">
+                            <fieldset>
+                                <label for="genre">Select a Genre</label>
+                                <select name="genre" id="genre"></select>
+                            </fieldset>
+                            <button id="movie-button">Submit!</button>
+                        </form>
+                    </div>
+                    <div id="movies"></div>
+                </div>
+                <div class="select-year" style="width:200px;">
+                    <select>
+                        <option value="0">Select year:</option>
+                        <option value="1">2000</option>
+                        <option value="2">2001</option>
+                        <option value="3">2002</option>
+                        <option value="4">2003</option>
+                        <option value="5">2004</option>
+                        <option value="6">2005</option>
+                        <option value="7">2006</option>
+                        <option value="8">2007</option>
+                        <option value="9">2008</option>
+                        <option value="10">2009</option>
+                        <option value="11">2010</option>
+                        <option value="12">2011</option>
+                        <option value="13">2012</option>
+                        <option value="14">2013</option>
+                        <option value="15">2014</option>
+                        <option value="16">2015</option>
+                        <option value="17">2016</option>
+                        <option value="18">2017</option>
+                        <option value="19">2018</option>
+                        <option value="20">2019</option>
+                    </select>
+                </div>
+                <div class="select-rating" style="width:200px;">
+                    <select>
+                        <option value="0">Select Rating:</option>
+                        <option value="1">G</option>
+                        <option value="2">PG</option>
+                        <option value="3">PG-13</option>
+                        <option value="4">R</option>
+                    </select>
+                </div>
+
+
+            </div>
             <div class="col-6" id="formResults">this is for your results!</div>
         </div>
 
-        <!-- Row for first title-->
+        <!--Row for first title-->
         <div class="row" id="resultOne">
             First title
         </div>
@@ -45,7 +100,7 @@
             First Synopsis
         </div>
 
-        <!-- Row for second title-->
+        <!--Row for second title-->
         <div class="row" id="resultTwo">
             Second Title
         </div>
@@ -53,7 +108,7 @@
         <div class="row" id="synoposisTwo">
             Second Synopsis
         </div>
-        <!-- Row for third title-->
+        <!--Row for third title-->
         <div class="row" id="resultThree">
             Thirs Title
         </div>
@@ -61,7 +116,7 @@
         <div class="row" id="synopsisThree">
             Third Synopsis
         </div>
-        <!-- Row for fourth title-->
+        <!--Row for fourth title-->
         <div class="row" id="resultFour">
             Fourth Title
         </div>
@@ -69,7 +124,7 @@
         <div class="row" id="synopsisFour">
             Fourth Synopsis
         </div>
-        <!-- Row for fifth title-->
+        <!--Row for fifth title-->
         <div class="row" id="resultFives">
             Fifth title
         </div>
@@ -78,8 +133,8 @@
             Fifth synopsis
         </div>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--!--Optional JavaScript-->
+    jQuery first, then Popper.js, then Bootstrap JS-- >
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -89,6 +144,52 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url:
+                    "https://api.themoviedb.org/3/genre/movie/list?api_key=605fb8e2ccd3028b0de23babc676329e&language=en-US",
+                method: "GET"
+            }).then(function (data) {
+                data.genres.forEach(function (genre) {
+                    var $option = $("<option value='" + genre.id + "'>").text(
+                        genre.name
+                    );
+                    $("#genre").append($option);
+                });
+                $("#genre")
+                    .selectmenu()
+                    .selectmenu("menuWidget")
+                    .addClass("overflow");
+            });
+
+            $("#movie-button").on("click", function (e) {
+                e.preventDefault();
+                var genreId = $("#genre").val();
+                var genreUrl =
+                    "https://api.themoviedb.org/3/discover/movie?api_key=605fb8e2ccd3028b0de23babc676329e&with_genres=" +
+                    genreId +
+                    "&primary_release_year=2018&certification_country=US&certification=R&sort_by=popularity.desc";
+
+                $.ajax({
+                    url: genreUrl,
+                    method: "GET"
+                }).then(function (data) {
+                    console.log(data.results);
+                    var results = data.results;
+                    results.forEach(function (movie) {
+                        var $movie = $("<div>");
+                        var $title = $("<h1>").text(movie.title);
+                        $movie.append($title);
+                        $("#movies").append($movie);
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
