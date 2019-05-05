@@ -45,10 +45,13 @@
                 <label for="genre">Select a Genre</label>
                 <select name="genre" id="genre"></select>
               </fieldset>
+              <fieldset>
+                <label for="year">Select a Year</label>
+                <select name="year" id="year"></select>
+              </fieldset>
               <button id="movie-button">Submit!</button>
             </form>
           </div>
-          <div id="movies"></div>
         </div>
         <div class="select-year" style="width:200px;">
           <select>
@@ -87,7 +90,12 @@
 
 
       </div>
-      <div class="col-6" id="formResults">this is for your results!</div>
+      <div class="col-6" id="formResults">this is for your results!
+        <div id="movies">
+
+        </div>
+      </div>
+     
     </div>
 
     <!--Row for first title-->
@@ -162,33 +170,7 @@
 
   </div>
   <!-- Optional JavaScript -->
-  <script>
-    var settings = {
-      "async": true,
-      "crossDomain": true,
-      "url": "https://api.themoviedb.org/3/search/multi?include_adult=false&page=1&language=en-US&api_key=605fb8e2ccd3028b0de23babc676329e",
-      "method": "GET",
-      "headers": {},
-      "data": "{}"
-    }
-    // $.ajax(settings).done(function (response) {
-      console.log(response);
 
-      var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://api.themoviedb.org/3/search/keyword?page=1&api_key=605fb8e2ccd3028b0de23babc676329e",
-        "method": "GET",
-        "headers": {},
-        "data": "{}"
-      }
-      // $.ajax(settings).done(function (response) {
-        console.log(response);
-
-        //what are the best dramas
-        "URL: /discover/movie ? with_genres = 18 & sort_by=vote_average.desc & vote_count.gte=10"
-
-  </script>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -238,7 +220,7 @@
         var results = data.results;
         results.forEach(function (movie) {
           var $movie = $("<div>");
-          var $title = $("<h1>").text(movie.title);
+          var $title = $("<h2>").text(movie.title);
           $movie.append($title);
           $("#movies").append($movie);
         });

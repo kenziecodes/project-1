@@ -19,3 +19,30 @@ var base = "";
 var getCongif = function () {
     var url
 }*/
+<script>
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.themoviedb.org/3/search/multi?include_adult=false&page=1&language=en-US&api_key=605fb8e2ccd3028b0de23babc676329e",
+  "method": "GET",
+  "headers": {},
+  "data": "{}"
+}
+// $.ajax(settings).done(function (response) {
+  console.log(response);
+
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://api.themoviedb.org/3/search/keyword?page=1&api_key=605fb8e2ccd3028b0de23babc676329e",
+    "method": "GET",
+    "headers": {},
+    "data": "{}"
+  }
+  // $.ajax(settings).done(function (response) {
+    console.log(response);
+
+    //what are the best dramas
+    "URL: /discover/movie ? with_genres = 18 & sort_by=vote_average.desc & vote_count.gte=10"
+
+</script>
