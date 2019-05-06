@@ -2,163 +2,160 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- google fonts load in -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- under this is tuckers -->
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-    <!-- style.css -->
-    <link rel="stylesheet" href="style.css">
-    <!-- title -->
-    <title>Mom's Movies</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- google fonts load in -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- under this is tuckers -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+  <!-- style.css -->
+  <link rel="stylesheet" href="style.css">
+  <!-- title -->
+  <title>Mom's Movies</title>
 </head>
 
 <body>
-    <!--Title bar-->
-    <div class="container" id="mainContainer">
-        <!-- header -->
-        <div class="row" class="col-12" id="header">
-            <h1>Mom's movies</h1>
-        </div>
-        <!-- Row for form and titie list & form/results cards -->
-        <div class="row" id="mainRow">
-            <div class="col-6" class="selections" id="title"> Make your selections here!!
-
-                <div class="select-genre" style="width:200px;">
-                    <!-- tucker helped with this -->
-                    <div class="genreForm">
-                        <form action="#">
-                            <fieldset>
-                                <label for="genre">Select a Genre</label>
-                                <select name="genre" id="genre"></select>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-                <div class="select-year" style="width:200px;">
-                    <select id="year">
-                        <option value="">Select year:</option>
-                        <option value="2000">2000</option>
-                        <option value="2001">2001</option>
-                        <option value="2002">2002</option>
-                        <option value="2003">2003</option>
-                        <option value="2004">2004</option>
-                        <option value="2005">2005</option>
-                        <option value="2006">2006</option>
-                        <option value="2007">2007</option>
-                        <option value="2008">2008</option>
-                        <option value="2009">2009</option>
-                        <option value="2010">2010</option>
-                        <option value="2011">2011</option>
-                        <option value="2012">2012</option>
-                        <option value="2013">2013</option>
-                        <option value="2014">2014</option>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                    </select>
-                </div>
-                <div class="select-rating" style="width:200px;">
-                    <select id="rating">
-                        <option value="0">Select Rating:</option>
-                        <option value="1">G</option>
-                        <option value="2">PG</option>
-                        <option value="3">PG-13</option>
-                        <option value="4">R</option>
-                    </select>
-                </div>
-
-                <button id="movie-button">Submit!</button>
-
-
-            </div>
-            <div class="col-6" id="formResults">this is for your results!
-                <div id="movies"></div>
-            </div>
-        </div>
+  <!--Title bar-->
+  <div class="container" id="mainContainer">
+    <!-- header -->
+    <div class="row" class="col-12" id="header">
+      <h1>Mom's movies</h1>
     </div>
+    <!-- Row for form and titie list & form/results cards -->
+    <div class="row" id="mainRow">
+      <div class="col-6" class="selections" id="title"> Make your selections here!!
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        <div class="select-genre" style="width:200px;">
+          <!-- tucker helped with this -->
+          <div class="genreForm">
+            <form action="#">
+              <fieldset>
+                <label for="genre">Select a Genre</label>
+                <select name="genre" id="genre"></select>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        <label for="year">Select a Year:</label>
+        <div class="select-year" style="width:200px;">
+          <select id="year">
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019" selected>2019</option>
+          </select>
+        </div>
+        <label for="rating">Select a Rating:</label>
+        <div class="select-rating" style="width:200px;">
+          <select id="rating">
+            <option value="1"selected>G</option>
+            <option value="2">PG</option>
+            <option value="3">PG-13</option>
+            <option value="4">R</option>
+          </select>
+        </div>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $(function () {
-
-            var $genre = $("#genre");
-            var $year = $("#year");
-            var $rating = $("#rating");
-            $year
-                .selectmenu()
-                .selectmenu("menuWidget")
-                .addClass("overflow");
-            $rating
-                .selectmenu()
-                .addClass("overflow");
-            $.ajax({
-                url:
-                    "https://api.themoviedb.org/3/genre/movie/list?api_key=605fb8e2ccd3028b0de23babc676329e&language=en-US",
-                method: "GET"
-            }).then(function (data) {
-                data.genres.forEach(function (genre) {
-                    var $option = $("<option value='" + genre.id + "'>").text(
-                        genre.name
-                    );
-                    $("#genre").append($option);
-                });
-                $genre
-                    .selectmenu()
-                    .selectmenu("menuWidget")
-                    .addClass("overflow");
-            });
-
-            $("#movie-button").on("click", function (e) {
-                e.preventDefault();
-                var genreId = $("#genre").val();
-                var yearToSearch = $('.select-year > select').val() || '2019';
-                console.log(yearToSearch);
-                var genreUrl =
-                    "https://api.themoviedb.org/3/discover/movie?api_key=605fb8e2ccd3028b0de23babc676329e&with_genres=" +
-                    genreId +
-                    "&primary_release_year=" + yearToSearch + "&certification_country=US&certification=R&sort_by=popularity.desc";
-
-                $.ajax({
-                    url: genreUrl,
-                    method: "GET"
-                }).then(function (data) {
-                    console.log(data.results);
-                    // limiit results to 5
-                    var results = data.results.slice(0, 5);
-                    // emptying the results
-                    $('#movies').empty();
-                    results.forEach(function (movie) {
-                        // appending search results
-                        $("#movies").append('<div><h1>' + movie.title + '</h1></div>');
-
-                        // Build rows with other information
+        <button id="movie-button">Submit!</button>
 
 
-                    });
-                });
-            });
+      </div>
+      <div class="col-6" id="formResults">this is for your results!
+        <div id="movies"></div>
+      </div>
+    </div>
+  </div>
+  <!--!--Optional JavaScript-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    //jQuery UI for select function
+    $(document).ready(function () {
+      var $genre = $("#genre");
+      var $year = $("#year");
+      var $rating = $("#rating");
+      $year
+        .selectmenu()
+        .selectmenu("menuWidget")
+        .addClass("overflow");
+      $rating
+        .selectmenu()
+        .addClass("overflow");
+
+
+      $.ajax({
+        url:
+          "https://api.themoviedb.org/3/genre/movie/list?api_key=605fb8e2ccd3028b0de23babc676329e&language=en-US",
+        method: "GET"
+      }).then(function (data) {
+        data.genres.forEach(function (genre) {
+          var $option = $("<option value='" + genre.id + "'>").text(
+            genre.name
+          );
+          $("#genre").append($option);
         });
+        $("#genre")
+          .selectmenu()
+          .selectmenu("menuWidget")
+          .addClass("overflow");
+      });
+      $("#movie-button").on("click", function (e) {
+        e.preventDefault();
+        var genreId = $("#genre").val();
+        var yearToSearch = $('.select-year > select').val() || '2019';
+        var ratingToSearch = $('.select-rating');
+        var genreUrl =
+          "https://api.themoviedb.org/3/discover/movie?api_key=605fb8e2ccd3028b0de23babc676329e&with_genres=" +
+          genreId +
+          "&primary_release_year=" + yearToSearch + "&certification_country=US&certification=" + ratingToSearch + "&sort_by=popularity.desc";
+        $.ajax({
+          url: genreUrl,
+          method: "GET"
+        }).then(function (data) {
+          console.log(data.results);
+          // limiit results to 5
+          var results = data.results.slice(0, 5);
+          // emptying the results
+          $('#movies').empty();
+          results.forEach(function (movie) {
 
-    </script>
+            // appending search results
+            $("#movies").append('<div><h1>' + movie.title + '</h1></div>');
+          });
+
+        });
+      });
+    });
+
+  </script>
 
 </body>
 
