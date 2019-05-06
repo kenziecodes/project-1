@@ -84,7 +84,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container" id="movies">
         <div class="row">
             <div class="col-sm-6">
@@ -119,7 +119,7 @@
             $rating
                 .selectmenu()
                 .addClass("overflow");
-
+            // this is the ajax call for the tmdb API
             $.ajax({
                 url:
                     "https://api.themoviedb.org/3/genre/movie/list?api_key=605fb8e2ccd3028b0de23babc676329e&language=en-US",
@@ -150,27 +150,44 @@
                     url: genreUrl,
                     method: "GET"
                 }).then(function (data) {
-                    console.log(data.results);
-                    // If results is empty prompt the user
-                    
+                    console.log(data.results)
 
-                    // limiit results to 5
+
+                    // If results is empty prompt the user
+
+
+                    // limit results to 5
                     var results = data.results.slice(0, 5);
                     // emptying the results
                     $('#movie-titles').empty();
+                    $('#movies').empty();
                     results.forEach(function (movie) {
 
-                        // appending search results
-                        $("#movie-titles").append('<div><h1>' + movie.title + '</h1></div>');
+                        // bryce
+                        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + movie.title + "&api_key=dZ3DvkFrBrsASzC1EK3wYeA4yOHnTllQ";
+                        $.ajax({
+                            url: queryURL,
+                            method: "GET"
+                        }).then(function (response) {
 
-                        // build our row
-                        var $row = $("<div class='row'>");
+                            // Creating a div to hold the movie
+                            console.log(response);
 
-                        // add our movie content to the newly created row
-                        $row.append('<div><h1>' + movie.title + '</h1></div>');
 
-                        // append row to #movies div
-                        $("#movies").append($row);
+                            // appending search results
+                            $("#movie-titles").append('<div><h1>' + movie.title + '</h1></div>');
+
+                            // build our row
+                            var $row = $("<div class='row'>");
+
+                            // add our movie content to the newly created row
+                            $row.append('<div class="col-sm-6"><h1>' + movie.title + '</h1></div>');
+                            $row.append('<div class="col-sm-6"><img class="img-fluid" src="' + response.data[0].images.original.url + '"></div>');
+
+                            // append row to #movies div
+                            $("#movies").append($row);
+                        });
+
                     });
 
                 });
