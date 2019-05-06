@@ -55,7 +55,7 @@
         </div>
         <div class="select-year" style="width:200px;">
           <select>
-            <option value="0">Select year:</option>
+            <option disabled >Select year:</option>
             <option value="1">2000</option>
             <option value="2">2001</option>
             <option value="3">2002</option>
@@ -202,7 +202,7 @@
         .selectmenu()
         .selectmenu("menuWidget")
         .addClass("overflow");
-    });
+      });
 
     $("#movie-button").on("click", function (e) {
       e.preventDefault();
