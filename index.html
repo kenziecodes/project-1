@@ -7,23 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- google fonts load in -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro" rel="stylesheet">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- linking in the jquery UI -->
-    <!-- <link rel="stylesheet" href="jquery-ui.min.css">
-    <script src="external/jquery/jquery.js"></script>
-    <script src="jquery-ui.min.js"></script> -->
-    <!-- style.css -->
-
-    <!-- under this iis tuckers -->
+    <!-- under this is tuckers -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-    <!--<link rel="stylesheet" href="/resources/demos/style.css" /> -->
+    <!-- style.css -->
     <link rel="stylesheet" href="style.css">
-
-
-
+    <!-- title -->
     <title>Mom's Movies</title>
 </head>
 
@@ -36,10 +27,11 @@
         </div>
         <!-- Row for form and titie list & form/results cards -->
         <div class="row" id="mainRow">
-            <div class="col-6" id="title"> Make your selections here!!
+            <div class="col-6" class="selections" id="title"> Make your selections here!!
+
                 <div class="select-genre" style="width:200px;">
                     <!-- tucker helped with this -->
-                    <div class="demo">
+                    <div class="genreForm">
                         <form action="#">
                             <fieldset>
                                 <label for="genre">Select a Genre</label>
@@ -85,56 +77,13 @@
 
                 <button id="movie-button">Submit!</button>
 
+
             </div>
             <div class="col-6" id="formResults">this is for your results!
                 <div id="movies"></div>
             </div>
         </div>
-
-        <!--Row for first title-->
-        <div class="row" id="resultOne">
-            First title
-        </div>
-
-        <!--row for title Synopsis and Gif-->
-        <div class="row" id="synopsisOne">
-            First Synopsis
-        </div>
-
-        <!--Row for second title-->
-        <div class="row" id="resultTwo">
-            Second Title
-        </div>
-        <!--row for second title Synopsis and Gif-->
-        <div class="row" id="synoposisTwo">
-            Second Synopsis
-        </div>
-        <!--Row for third title-->
-        <div class="row" id="resultThree">
-            Thirs Title
-        </div>
-        <!--row for third title Synopsis and Gif-->
-        <div class="row" id="synopsisThree">
-            Third Synopsis
-        </div>
-        <!--Row for fourth title-->
-        <div class="row" id="resultFour">
-            Fourth Title
-        </div>
-        <!--row for fourth title Synopsis and Gif-->
-        <div class="row" id="synopsisFour">
-            Fourth Synopsis
-        </div>
-        <!--Row for fifth title-->
-        <div class="row" id="resultFives">
-            Fifth title
-        </div>
-        <!--row for fifth title Synopsis and Gif-->
-        <div class="row" id="synopsisFive">
-            Fifth synopsis
-        </div>
     </div>
-    <!--!--Optional JavaScript-->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -175,20 +124,24 @@
                 var genreUrl =
                     "https://api.themoviedb.org/3/discover/movie?api_key=605fb8e2ccd3028b0de23babc676329e&with_genres=" +
                     genreId +
-                    "&primary_release_year=" + yearToSearch +"&certification_country=US&certification=R&sort_by=popularity.desc";
+                    "&primary_release_year=" + yearToSearch + "&certification_country=US&certification=R&sort_by=popularity.desc";
 
                 $.ajax({
                     url: genreUrl,
                     method: "GET"
                 }).then(function (data) {
                     console.log(data.results);
+                    // limiit results to 5
                     var results = data.results.slice(0, 5);
+                    // emptying the results
                     $('#movies').empty();
                     results.forEach(function (movie) {
-                        // var $movie = $("<div>");
-                        // var $title = $("<h1>").text(movie.title);
-                        // $movie.append($title);
+                        // appending search results
                         $("#movies").append('<div><h1>' + movie.title + '</h1></div>');
+
+                        // Build rows with other information
+
+
                     });
                 });
             });
