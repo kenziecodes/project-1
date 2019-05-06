@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="select-year" style="width:200px;">
-                    <select>
+                    <select id="year">
                         <option value="">Select year:</option>
                         <option value="2000">2000</option>
                         <option value="2001">2001</option>
@@ -66,7 +66,7 @@
                     </select>
                 </div>
                 <div class="select-rating" style="width:200px;">
-                    <select>
+                    <select id="rating">
                         <option value="0">Select Rating:</option>
                         <option value="1">G</option>
                         <option value="2">PG</option>
@@ -99,6 +99,17 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $(function () {
+
+            var $genre = $("#genre");
+            var $year = $("#year");
+            var $rating = $("#rating");
+            $year
+                .selectmenu()
+                .selectmenu("menuWidget")
+                .addClass("overflow");
+            $rating
+                .selectmenu()
+                .addClass("overflow");
             $.ajax({
                 url:
                     "https://api.themoviedb.org/3/genre/movie/list?api_key=605fb8e2ccd3028b0de23babc676329e&language=en-US",
@@ -110,7 +121,7 @@
                     );
                     $("#genre").append($option);
                 });
-                $("#genre")
+                $genre
                     .selectmenu()
                     .selectmenu("menuWidget")
                     .addClass("overflow");
@@ -146,7 +157,9 @@
                 });
             });
         });
+
     </script>
+
 </body>
 
 </html>
