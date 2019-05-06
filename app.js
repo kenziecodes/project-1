@@ -44,5 +44,12 @@ var settings = {
 
     //what are the best dramas
     "URL: /discover/movie ? with_genres = 18 & sort_by=vote_average.desc & vote_count.gte=10"
+    <label for="year">Select a Year</label>
+    <select name="year" id="year"></select>
+  </fieldset>
+  <button id="movie-button">Submit!</button>
+</form>
+</div>
+</div>
 
 </script>

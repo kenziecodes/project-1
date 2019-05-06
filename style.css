@@ -6,6 +6,7 @@ font-family: 'Source Sans Pro', sans-serif;
   #title {
       background-color: #666699;
       font-family: 'Montserrat', sans-serif;
+      padding:10px;
   }
   #formResults {
       background-color: #a3a3c2;
