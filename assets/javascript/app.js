@@ -30,6 +30,8 @@ $(document).ready(function () {
   //Search tmdb data with button click to get results
   $("#movie-button").on("click", function (e) {
     e.preventDefault();
+    $('#movie-titles').empty();
+    $('#movies').empty();
     var genreId = $("#genre").val();
     var yearToSearch = $('.select-year > select').val() || '2019';
     var ratingToSearch = $('.select-rating > select').val();
@@ -55,8 +57,7 @@ $(document).ready(function () {
       // limit results to 5
       var results = data.results.slice(0, 5);
       // emptying the results
-      $('#movie-titles').empty();
-      $('#movies').empty();
+ 
       console.log(data.results)
       results.forEach(function (movie) {
 
