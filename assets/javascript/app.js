@@ -56,7 +56,7 @@ $(document).ready(function () {
       results.forEach(function (movie) {
 
         // bryce
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + movie.title + "&api_key=dZ3DvkFrBrsASzC1EK3wYeA4yOHnTllQ";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + movie.title + "&api_key=dZ3DvkFrBrsASzC1EK3wYeA4yOHnTllQ";
         $.ajax({
           url: queryURL,
           method: "GET"
