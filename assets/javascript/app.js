@@ -43,9 +43,14 @@ $(document).ready(function () {
     }).then(function (data) {
       console.log(data.results)
 
-
-      // If results is empty prompt the user?
-
+      // Validation if user selection returns no results
+      if(data.results.length === 0){
+        // let user know that there is no movies
+        $("#movie-titles").append("<h3>No results, Please make new selections!");
+        
+        // return so that rest of code does not execute
+        return;
+      }
 
       // limit results to 5
       var results = data.results.slice(0, 5);
@@ -73,7 +78,7 @@ $(document).ready(function () {
           var $row = $("<div class='row'>");
 
           // add our movie content to the newly created row
-          $row.append('<div class="col-sm-6"><h1>' + movie.title + '</h1><p>' + movie.overview + '</p> <h3><p>'+ "Moms score out of 10: " + movie.vote_average +'</p></h3></div>');
+          $row.append('<div class="col-sm-6"><h1>' + movie.title + '</h1><p>' + movie.overview + '</p> <h3><p>' + "Moms score out of 10: " + movie.vote_average + '</p></h3></div>');
 
           $row.append('<div class="col-sm-6"><img class="img-fluid rounded fixed-right" src="' + response.data[0].images.original.url + '"></div>');
           // Setting the src attribute of the image to a property pulled off the result item. Variable needed for img to still and animate on click?
