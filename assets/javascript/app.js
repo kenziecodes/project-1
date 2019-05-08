@@ -83,7 +83,7 @@ $(document).ready(function () {
           var $row = $("<div class='row movie-container' id='"+movie.id+"'>");
 
           // add our movie content to the newly created row
-          $row.append('<div class="col-sm-6"><h1>' + movie.title + '</h1><p>' + movie.overview + '</p> <h3><p>' + "Moms score out of 10: " + movie.vote_average + '</p></h3></div>');
+          $row.append('<div class="col-sm-6"><h1>' + movie.title + '</h1><p class="overview">' + movie.overview + '</p> <h3><p class="average">' + "Moms score out of 10: " + movie.vote_average + '</p></h3></div>');
 
           $row.append('<div class="col-sm-6"><img class="movie-giff img-fluid rounded fixed-right" src="' + response.data[0].images.original.url + '"></div>');
           // Setting the src attribute of the image to a property pulled off the result item.
