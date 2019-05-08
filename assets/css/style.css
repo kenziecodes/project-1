@@ -1,16 +1,90 @@
-font-family: 'Montserrat', sans-serif;
-font-family: 'Source Sans Pro', sans-serif;
+/*movie title scroll*/
+html {
+  scroll-behavior: smooth;
+}
+
+#main {
+  min-height: calc(100vh - 60px);
+}
+
+footer {
+  min-height: 40px;
+  border-top: #666699;
+  margin-top: 20px;
+  color: #fff;
+}
+
+#movie-wrap {
+  position: relative;
+}
+/*right side button scroll styling */
+.hide { display: none;}
+
+#to-top {
+  width: 30px;
+  height: 30px;
+  background: #666699;
+  z-index: 999;
+  position: fixed;
+  right: 0;
+  padding-left: 10px;
+  padding-top: 4px;
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem;
+}
+#to-top a {
+  color: white;
+}
+#to-top a:hover {
+  text-decoration: none;
+  color: #a3a3c2;
+}
+/*color with transperancy around each row of movie overview and gif*/
+.movie-container {
+  margin-bottom: 22px;
+  background-color: rgba(155,155,155, .5);
+  border-radius: .25rem;
+  padding:10px;
+}
+
+.movie-giff {
+  height: 300px;
+  width: 85%;
+}
+
+.spacer {
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+  padding: 10px 0 5px;
+}
+#movie-titles a {
+  color: #fff;
+  text-decoration: none;
+}
+#movie-titles a:hover {
+  color: #666699;
+}
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Source Sans Pro', sans-serif; */
 #h1 {
     text-align: center;
+  }
+  #mainRow {
+    margin-bottom: 22px;
   }
   #title {
       background-color: #666699;
       font-family: 'Montserrat', sans-serif;
       padding:10px;
+      border-top-left-radius: .25rem;
+      border-bottom-left-radius: .25rem;
   }
   #formResults {
       background-color: #a3a3c2;
       font-family: 'Montserrat', sans-serif;
+      border-top-right-radius: .25rem;
+      border-bottom-right-radius: .25rem;
       
   }
   fieldset {
