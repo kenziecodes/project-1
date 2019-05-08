@@ -6,13 +6,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- google fonts load in -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Source+Code+Pro" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- under this is tuckers -->
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-  
+
   <!-- style.css -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <!-- title -->
@@ -23,25 +23,26 @@
   <!--Title bar-->
   <div class="container" id="mainContainer">
     <!-- header -->
-    <div class="row" class="col-12" id="header">
+    <div class="pageTitle" class="row" class="col-12" id="header">
       <h1>Mom's movies</h1>
     </div>
     <!-- Row for form and titie list & form/results cards -->
     <div class="row" id="mainRow">
-      <div class="col-6" class="selections" id="title"> Make your selections here!!
+      <div class="col-6" class="selections" id="title">
+        <div class="form-header">Make your selections here!!</div>
 
         <div class="select-genre" style="width:200px;">
           <!-- tucker helped with this -->
           <div class="genreForm">
             <form action="#">
               <fieldset>
-                <label for="genre">Select a Genre</label>
+                <label class="form-label" for="genre">Select a Genre</label>
                 <select name="genre" id="genre"></select>
               </fieldset>
             </form>
           </div>
         </div>
-        <label for="year">Select a Year</label>
+        <label class="form-label" for="year">Select a Year</label>
         <div class="select-year" style="width:200px;">
           <select id="year">
             <option value="2000">2000</option>
@@ -66,7 +67,7 @@
             <option value="2019" selected>2019</option>
           </select>
         </div>
-        <label for="rating">Select a Rating</label>
+        <label class="form-label" for="rating">Select a Rating</label>
         <div class="select-rating" style="width:200px;">
           <select id="rating">
             <option value="G">G</option>
@@ -77,11 +78,12 @@
         </div>
 
         <div class="btn-wrap">
-        <button id="movie-button" class="btn btn-primary">Search!</button>
-      </div>
+          <button id="movie-button" class="btn btn-primary">Search!</button>
+        </div>
 
       </div>
-      <div class="col-6" id="formResults">See the movie titles below!
+      <div class="col-6" id="formResults">
+        <div class="form-header">See the movie titles below!</div>
         <div id="movie-titles"></div>
       </div>
     </div>

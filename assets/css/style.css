@@ -1,17 +1,39 @@
-font-family: 'Montserrat', sans-serif;
-font-family: 'Source Sans Pro', sans-serif;
-#h1 {
-    text-align: center;
+/* 
+#cfb1b3 dusty pink
+#bc7b7d mauve pink
+#dab457 mustard
+#6f7a53 olive
+#c9c7af mint 
+ */
+
+
+
+ font-family: 'Amatic SC', normal;
+ font-family: 'Source Code Pro', monospace;
+ #h1 {
+   text-align: center;
   }
   #title {
-      background-color: #666699;
-      font-family: 'Montserrat', sans-serif;
-      padding:10px;
+    background-color: #bc7b7d;
+    font-family: 'Amatic SC', normal;
+    font-size: 12pt;
   }
   #formResults {
-      background-color: #a3a3c2;
-      font-family: 'Montserrat', sans-serif;
-      
+    background-color: #cfb1b3;
+    font-family: 'Amatic SC', normals;
+    font-size: 20px;
+  }
+  
+  .pageTitle, h1 {
+   background-color: #dab457;
+   font-family: 'Amatic SC', normal;
+   font-size: 100px;
+  }
+  .form-label{
+    font-size: 30px;
+  }
+  .form-header{
+    font-size: 40px;
   }
   fieldset {
     border: 0;
@@ -26,3 +48,4 @@ font-family: 'Source Sans Pro', sans-serif;
   .btn-wrap {
     padding: 10px;
   }
+  
