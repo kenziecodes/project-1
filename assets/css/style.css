@@ -4,10 +4,8 @@
 #dab457 mustard
 #6f7a53 olive
 #c9c7af mint 
+#fbf7f5 off white
  */
-
-
-
  /* font-family: 'Amatic SC', normal;
  font-family: 'Source Code Pro', monospace; */
  #h1 {
@@ -20,25 +18,18 @@ html {
 
 #main {
   min-height: calc(100vh - 60px);
+  background: #fbf7f5;
 }
-
-footer {
-  min-height: 40px;
-  border-top: #666699;
-  margin-top: 20px;
-  color: #fff;
-}
-
 #movie-wrap {
   position: relative;
 }
 /*right side button scroll styling */
 .hide { display: none;}
-
+/* what is going on here??? */
 #to-top {
   width: 30px;
   height: 30px;
-  background: #666699;
+  background: #bc7b7d;
   z-index: 999;
   position: fixed;
   right: 0;
@@ -48,16 +39,16 @@ footer {
   border-bottom-left-radius: .25rem;
 }
 #to-top a {
-  color: white;
+  color: #bc7b7d;
 }
 #to-top a:hover {
   text-decoration: none;
-  color: #a3a3c2;
+  color: #bc7b7d;
 }
 /*color with transperancy around each row of movie overview and gif*/
 .movie-container {
   margin-bottom: 22px;
-  background-color: rgba(155,155,155, .5);
+  background-color: #cfb1b3;
   border-radius: .25rem;
   padding:10px;
 }
@@ -73,11 +64,12 @@ footer {
   padding: 10px 0 5px;
 }
 #movie-titles a {
-  color: #fff;
+  color: black;
   text-decoration: none;
+  font-size: 30px;
 }
 #movie-titles a:hover {
-  color: #666699;
+  color: #bc7b7d;
 }
 
 /* font-family: 'Montserrat', sans-serif;
@@ -89,38 +81,43 @@ font-family: 'Source Sans Pro', sans-serif; */
     margin-bottom: 22px;
   }
   #title {
-    background-color: #bc7b7d;
+    background-color: #cfb1b3;
     font-family: 'Amatic SC', normal;
     font-size: 12pt;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
   }
+  
   #formResults {
     background-color: #cfb1b3;
-    font-family: 'Amatic SC', normals;
+    font-family: 'Amatic SC', normal;
     font-size: 20px;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+      
   }
   
   .pageTitle, h1 {
-   background-color: #dab457;
+   background-color: #bc7b7d;
    font-family: 'Amatic SC', normal;
-   font-size: 100px;
+   font-size: 70px;
   }
   .form-label{
     font-size: 30px;
   }
   .form-header{
     font-size: 40px;
-      background-color: #666699;
-      font-family: 'Montserrat', sans-serif;
-      padding:10px;
-      border-top-left-radius: .25rem;
-      border-bottom-left-radius: .25rem;
+    background-color: #bc7b7d;
+    font-family: 'Amatic SC', normal;
+    margin-top: 10px;
+    padding:10px;
+    border-radius: .25rem;
   }
-  #formResults {
-      background-color: #a3a3c2;
-      font-family: 'Montserrat', sans-serif;
-      border-top-right-radius: .25rem;
-      border-bottom-right-radius: .25rem;
-      
+  .overview {
+    font-family: 'Source Code Pro', monospace;
+  }
+  .average {
+    font-family: 'Source Code Pro', monospace;
   }
   fieldset {
     border: 0;
